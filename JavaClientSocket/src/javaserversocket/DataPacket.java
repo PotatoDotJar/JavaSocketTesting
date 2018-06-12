@@ -1,7 +1,7 @@
-
 package javaserversocket;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -11,25 +11,22 @@ public class DataPacket implements Serializable {
 
     private static final long serialVersionUID = -5399605122490343339L;
 
-    private double[] pos;
+    private Double[] pos;
 
     private String name;
 
-    public DataPacket(String name, int dataLength) {
+    public DataPacket(String name, Double[] data) {
         this.name = name;
 
-        pos = new double[dataLength];
+        this.pos = data;
 
-        for (int i = 0; i < pos.length; i++) {
-            pos[i] = new Random().nextDouble();
-        }
     }
 
-    public double[] getPos() {
+    public Double[] getPos() {
         return pos;
     }
 
-    public void setPos(double[] pos) {
+    public void setPos(Double[] pos) {
         this.pos = pos;
     }
 
@@ -43,7 +40,7 @@ public class DataPacket implements Serializable {
 
     @Override
     public String toString() {
-        return "DataPacket{" + "pos=" + pos + ", name=" + name + '}';
+        return "DataPacket{" + "pos length=" + pos.length + ", name=" + name + '}';
     }
 
 }

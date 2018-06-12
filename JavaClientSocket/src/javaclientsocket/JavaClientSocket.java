@@ -1,11 +1,8 @@
 package javaclientsocket;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
 import java.net.Socket;
 import javaserversocket.DataPacket;
 import javax.swing.JOptionPane;
@@ -16,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class JavaClientSocket {
 
-    private String host = "localhost";
+    private String host = "pi.potatosaucevfx.com";
     private int port = 8082;
 
     private Socket client;
@@ -44,8 +41,6 @@ public class JavaClientSocket {
         private ObjectOutputStream out;
 
         private boolean clientThreadRunning = true;
-
-        private boolean handshake = false;
 
         public NetThread(Socket socket) {
             try {
